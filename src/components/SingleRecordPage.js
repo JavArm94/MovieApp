@@ -2,15 +2,13 @@ import React, { useContext, useEffect, useReducer } from "react";
 import styled from "styled-components";
 import { poster_url as poster } from "../utils/constants";
 import { createBgImg } from "../utils/helpers";
-import { useParams, Link, useHistory } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import { useFetchContext } from "../context/fetch_context";
 import apiLogo from "../assets/movie_db_logo.svg";
-
 const SingleRecordPage = () => {
   const { id, media_type } = useParams();
   const { single_record, single_record_loading, fetchSingleRecord } =
     useFetchContext();
-
   const {
     overview: description,
     title,
@@ -18,6 +16,7 @@ const SingleRecordPage = () => {
     release_date,
     first_air_date,
   } = single_record["singleRecord"] ? single_record["singleRecord"] : "";
+  const location = useLocation();
 
   const changeMovie = (media_type, id) => {
     fetchSingleRecord(media_type, id);
@@ -25,7 +24,7 @@ const SingleRecordPage = () => {
 
   useEffect(() => {
     fetchSingleRecord(media_type, id);
-  }, []);
+  }, [location]);
 
   if (single_record_loading) {
     return <Wrapper>Loading...</Wrapper>;

@@ -2,10 +2,8 @@ import axios from "axios";
 import React, { useContext, useEffect, useReducer, useState } from "react";
 import reducer from "../reducers/fetch_reducer";
 import { search_record as search_record_url } from "../utils/constants";
-import { genres_url as genres_fetch_url } from "../utils/constants";
 import { trending as tredingUrl } from "../utils/constants";
 import { top_rated as topRatedUrl } from "../utils/constants";
-import { people as people_url } from "../utils/constants";
 import { base_url as base_url_api } from "../utils/constants";
 import { director_movie_url as single_person } from "../utils/constants";
 import {
@@ -16,16 +14,8 @@ import {
   GET_SINGLE_RECORD_SUCCESS,
   GET_SINGLE_RECORD_ERROR,
   GET_FAVORITES,
-  GET_EXTRA_RECORD_INFO_BEGIN,
-  GET_EXTRA_RECORD_INFO_ERROR,
-  GET_EXTRA_RECORD_INFO_SUCCESS,
-  GET_GENRES_ERROR,
-  GET_GENRES,
-  GET_FAVORITE_MOVIES,
-  GET_FAVORITE_SERIES,
 } from "../actions";
 import { formatInput } from "../utils/helpers";
-//check
 const initialState = {
   records_loading: false,
   records_error: false,

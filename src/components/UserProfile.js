@@ -30,7 +30,7 @@ const Wrapper = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: 0.7rem;
+  font-size: 1rem;
   background-color: #141414;
   border-radius: 50px;
   height: 40px;
@@ -41,6 +41,7 @@ const Wrapper = styled.div`
     background-color: #1e1e1e;
     padding: 10px 10px;
     border-radius: 50px;
+    letter-spacing: 0.4rem;
   }
 
   .selected {
@@ -49,16 +50,15 @@ const Wrapper = styled.div`
   }
 
   button {
-    height: 30px;
-    font-size: 0.8rem;
+    height: 38px;
     color: #ffffff;
     background-color: #141414;
     border-radius: 20px;
     border: none;
-    margin: 0px 5px;
+    margin: 5px 5px;
     cursor: pointer;
     white-space: nowrap;
-    font-size: 0.7rem;
+    font-size: 1rem;
 
     :hover {
       color: #000000;
