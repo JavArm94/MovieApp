@@ -25,7 +25,7 @@ import {
   GET_FAVORITE_SERIES,
 } from "../actions";
 import { formatInput } from "../utils/helpers";
-
+//check
 const initialState = {
   records_loading: false,
   records_error: false,
