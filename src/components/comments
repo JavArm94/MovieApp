@@ -1,0 +1,55 @@
+/*const fetchExtraRecordInfo = async (media_type, id) => {
+  const movieId = Number(id);
+  const creditsRecordUrl = `https://api.themoviedb.org/3/${media_type}/${movieId}/credits?api_key=${process.env.REACT_APP_MOVIEDB_API_KEY}&language=en-US`;
+
+  dispatch({ type: GET_EXTRA_RECORD_INFO_BEGIN });
+  try {
+    // DIRECTOR INFO FETCH
+    const responseCredits = await axios.get(creditsRecordUrl);
+    const creditsData = responseCredits.data;
+    console.log("here", creditsData);
+    const directorInfo = creditsData.crew.filter((person) => {
+      return (
+        person.known_for_department === "Directing" &&
+        person.department === "Directing" &&
+        person.job === "Director"
+      );
+    });
+
+    // RECORDS FROM DIRECTOR FETCH
+    //${single_person} removed from start url
+    const urlRecordsDirector = `${single_person}${directorInfo[0].id}/combined_credits?api_key=${process.env.REACT_APP_MOVIEDB_API_KEY}&language=en-US`;
+    const responseDirector = await axios.get(urlRecordsDirector);
+
+    const directorRecords = responseDirector.data.crew
+      .filter((record) => {
+        return (
+          record.id !== movieId &&
+          record.media_type === media_type &&
+          record.department === "Directing" &&
+          record.job === "Director"
+        );
+      })
+      .sort((a, b) => {
+        return b.popularity - a.popularity;
+      })
+      .slice(0, 3);
+    console.log(4);
+
+    dispatch({
+      type: GET_EXTRA_RECORD_INFO_SUCCESS,
+      payload: { directorInfo, directorRecords },
+    });
+    console.log(5);
+
+    console.log(
+      "director info =>",
+      directorInfo,
+      "director movies",
+      directorRecords
+    );
+  } catch (error) {
+    dispatch({ type: GET_EXTRA_RECORD_INFO_ERROR });
+  }
+};
+*/
