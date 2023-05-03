@@ -9,7 +9,6 @@ const Filter = () => {
     setFilterCriteria,
     setPageIndex,
     filterMedia,
-    filterCriteria,
     filterUser,
     isSearching,
   } = useFetchContext();

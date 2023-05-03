@@ -1,4 +1,4 @@
-import { TrendingCard } from "../components";
+import { FeatureCard } from "../components";
 import React from "react";
 import styled from "styled-components";
 import { useFetchContext } from "../context/fetch_context";
@@ -18,7 +18,7 @@ const FeaturedContainer = () => {
       <div className="container">
         {records.map((record_item) => {
           return (
-            <TrendingCard key={record_item.id} {...record_item}></TrendingCard>
+            <FeatureCard key={record_item.id} {...record_item}></FeatureCard>
           );
         })}
       </div>

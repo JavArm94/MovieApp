@@ -4,7 +4,7 @@ import CardsContainer from "./CardsContainer";
 import SingleRecordPage from "./SingleRecordPage";
 import Filter from "./Filter";
 import UserProfile from "./UserProfile";
-import TrendingCard from "./TrendingCard";
+import FeatureCard from "./FeatureCard";
 import FeaturedContainer from "./FeaturedContainer";
 import FavButton from "./FavButton";
 import Pagination from "./Pagination";
@@ -16,7 +16,7 @@ export {
   SingleRecordPage,
   Filter,
   UserProfile,
-  TrendingCard,
+  FeatureCard,
   FeaturedContainer,
   FavButton,
   Pagination,

@@ -17,6 +17,8 @@ const FeatureCard = ({
   name,
   id,
 }) => {
+  const { filterMedia } = useFetchContext();
+  const media_type_fav = media_type ? media_type : filterMedia; // featured fetch missing field media_type FIX
   const props = {
     id,
     title,
@@ -24,10 +26,8 @@ const FeatureCard = ({
     vote_average,
     poster_path,
     name,
-    media_type,
+    media_type: media_type_fav,
   };
-
-  const { filterMedia } = useFetchContext();
 
   return (
     <Wrapper
@@ -55,7 +55,7 @@ const FeatureCard = ({
             </div>
           </div>
           <div className="bottom-right">
-            <Link to={`/${media_type ? media_type : filterMedia}/${id}`}>
+            <Link to={`/${media_type_fav}/${id}`}>
               <button className="movie-page">More...</button>
             </Link>
           </div>
