@@ -65,6 +65,12 @@ const Wrapper = styled.div`
       background-color: #ededed;
     }
   }
+
+  @media screen and (max-width: 1300px) {
+    width: auto;
+    grid-row-start: 2;
+    grid-column-start: 2;
+  }
 `;
 
 export default UserProfile;

@@ -30,7 +30,10 @@ const SingleRecordPage = () => {
     return <Wrapper>Loading...</Wrapper>;
   }
 
-  if (single_record["directorInfo"]) {
+  if (
+    single_record["directorInfo"] &&
+    single_record["directorRecords"].length > 0
+  ) {
     return (
       <Wrapper>
         <section className="movie-poster">

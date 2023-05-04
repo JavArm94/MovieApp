@@ -64,6 +64,19 @@ const Wrapper = styled.div`
   a {
     height: fit-content;
   }
+
+  @media screen and (max-width: 1300px) {
+    width: 1000px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    .api-logo {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 1050px) {
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.5fr);
+    width: 800px;
+  }
 `;
 
 export default FeaturedContainer;

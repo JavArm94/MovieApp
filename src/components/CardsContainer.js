@@ -20,8 +20,12 @@ const CardsContainer = () => {
           return <MovieCard key={record.id} {...record}></MovieCard>;
         })}
       </div>
-      <a href="https://www.themoviedb.org/" target="_blank">
-        <img src={apiLogo} className="api-logo" />
+      <a
+        href="https://www.themoviedb.org/"
+        target="_blank"
+        className="api-logo"
+      >
+        <img src={apiLogo} />
       </a>
     </Wrapper>
   );
@@ -51,7 +55,12 @@ const Wrapper = styled.div`
     height: fit-content;
   }
 
-  @media screen {
+  @media screen and (max-width: 1300px) {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 2fr);
+    width: 1000px;
+    .api-logo {
+      display: none;
+    }
   }
 `;
 

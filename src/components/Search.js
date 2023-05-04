@@ -80,6 +80,18 @@ const Wrapper = styled.div`
     border-radius: 50px;
     padding: 1rem;
   }
+
+  @media screen and (max-width: 1300px) {
+    justify-content: start;
+    padding-bottom: 0px;
+    grid-row-start: 2;
+    grid-column-start: 1;
+    height: auto;
+    .search-btn {
+      left: -16px;
+      bottom: -16px;
+    }
+  }
 `;
 
 export default Search;

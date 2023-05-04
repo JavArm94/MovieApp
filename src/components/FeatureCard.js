@@ -2,8 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { poster_url as poster } from "../utils/constants";
 import FavButton from "./FavButton";
-import emptyStarIcon from "../assets/star-empty.png";
-import emptyHeartIcon from "../assets/heart-empty.png";
 import { createBgImg } from "../utils/helpers";
 import { Link } from "react-router-dom";
 import { useFetchContext } from "../context/fetch_context";
@@ -28,6 +26,7 @@ const FeatureCard = ({
     name,
     media_type: media_type_fav,
   };
+  const record_name = title || name;
 
   return (
     <Wrapper
@@ -44,17 +43,15 @@ const FeatureCard = ({
           </div>
         </div>
         <div className="bottom">
-          <div className="bottom-left">
-            <div className="description">
-              <h1>{title || name}</h1>
-              <p>
-                {description && description.length > 100
-                  ? description.slice(0, 150) + "..."
-                  : description}
-              </p>
-            </div>
+          <div className="title">
+            <h1>{record_name}</h1>
           </div>
-          <div className="bottom-right">
+          <div className="description">
+            {description && description.length > 100
+              ? description.slice(0, 150) + "..."
+              : description}
+          </div>
+          <div className="more">
             <Link to={`/${media_type_fav}/${id}`}>
               <button className="movie-page">More...</button>
             </Link>
@@ -151,19 +148,39 @@ const Wrapper = styled.div`
   }
 
   .bottom {
-    display: flex;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 60% 40%;
     align-items: flex-end;
     grid-row-start: 3;
     grid-row-end: 4;
-    grid-gap: 10px;
     padding: 40px;
   }
 
-  .bottom-left {
+  .title {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding-bottom: 30px;
+  }
+
+  .more {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .description {
+    margin-right: 5px;
   }
 
   span {
     color: #ffffff;
+  }
+
+  @media screen and (max-width: 1050px) {
+    .movie-page {
+      width: 100px;
+      font-size: 1rem;
+    }
   }
 `;
 

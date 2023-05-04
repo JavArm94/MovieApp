@@ -21,14 +21,15 @@ const Filter = () => {
           setFilterMedia("movie");
         }
         setFilterCriteria(filter);
-        fixTopRatedSelection();
-        setPageIndex(1);
+        topRatedSelection();
+
         e.target.classList.add("clicked");
       } else {
         setFilterMedia(filter);
-        setPageIndex(1);
+
         e.target.classList.add("clicked");
       }
+      setPageIndex(1);
     }
   };
 
@@ -48,7 +49,7 @@ const Filter = () => {
     });
   };
 
-  const fixTopRatedSelection = () => {
+  const topRatedSelection = () => {
     const allBtnSecondary =
       document.getElementsByClassName("filterBtnSecondary");
     allBtnSecondary[0].disabled = !allBtnSecondary[0].disabled;
@@ -58,7 +59,7 @@ const Filter = () => {
     }
   };
 
-  const fixDisableOnSearchFav = () => {
+  const disableOnSearchFav = () => {
     const allBtnPrimary = document.getElementsByClassName("filterBtnPrimary");
     const allBtnSecondary =
       document.getElementsByClassName("filterBtnSecondary");
@@ -74,7 +75,7 @@ const Filter = () => {
 
   useEffect(() => {
     if (isSearching || filterUser) {
-      fixDisableOnSearchFav();
+      disableOnSearchFav();
     } else {
       setDefault();
     }
@@ -100,30 +101,32 @@ const Filter = () => {
           </button>
         </Link>
       </span>
-      <Link to={"/"}>
-        <button
-          onMouseDown={(e) => clickedBtn("all", e, "filterBtnSecondary")}
-          className="filterBtnSecondary clicked"
-        >
-          All
-        </button>
-      </Link>
-      <Link to={"/"}>
-        <button
-          onMouseDown={(e) => clickedBtn("movie", e, "filterBtnSecondary")}
-          className="filterBtnSecondary"
-        >
-          Movies
-        </button>
-      </Link>
-      <Link to={"/"}>
-        <button
-          onMouseDown={(e) => clickedBtn("tv", e, "filterBtnSecondary")}
-          className="filterBtnSecondary"
-        >
-          Series
-        </button>
-      </Link>
+      <span>
+        <Link to={"/"}>
+          <button
+            onMouseDown={(e) => clickedBtn("all", e, "filterBtnSecondary")}
+            className="filterBtnSecondary clicked"
+          >
+            All
+          </button>
+        </Link>
+        <Link to={"/"}>
+          <button
+            onMouseDown={(e) => clickedBtn("movie", e, "filterBtnSecondary")}
+            className="filterBtnSecondary"
+          >
+            Movies
+          </button>
+        </Link>
+        <Link to={"/"}>
+          <button
+            onMouseDown={(e) => clickedBtn("tv", e, "filterBtnSecondary")}
+            className="filterBtnSecondary"
+          >
+            Series
+          </button>
+        </Link>
+      </span>
     </Wrapper>
   );
 };
@@ -140,7 +143,6 @@ const Wrapper = styled.div`
 
   button {
     color: #ffffff;
-
     border-radius: 20px;
     padding: 8px 16px;
     font-size: 1rem;
@@ -148,30 +150,16 @@ const Wrapper = styled.div`
     margin: 0px 5px;
     cursor: pointer;
     white-space: nowrap;
-
+    background-color: #1e1e1e;
     :hover {
       color: #000000;
       background-color: #ededed;
     }
-
-    :disabled {
-    }
   }
 
-  .filterBtnPrimary {
-    background-color: #1e1e1e;
-  }
-  .filterBtnSecondary {
-    background-color: #141414;
-  }
-
-  .filterBtnPrimary:disabled {
-    color: #2e2e2e;
-    pointer-events: none;
-  }
+  .filterBtnPrimary:disabled,
   .filterBtnSecondary:disabled {
-    background-color: #141414;
-    color: #1f1f1f;
+    color: #2e2e2e;
     pointer-events: none;
   }
 
@@ -183,6 +171,17 @@ const Wrapper = styled.div`
   span {
     background-color: #1e1e1e;
     border-radius: 50px;
+  }
+
+  @media screen and (max-width: 1300px) {
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: 1050px) {
   }
 `;
 
