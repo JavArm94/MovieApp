@@ -1,15 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import { useFetchContext } from "../context/fetch_context";
-import { useNavigate } from "react-router-dom";
 
 const UserProfile = () => {
   const { setFilterUser, setFilterCriteria, filterUser } = useFetchContext();
-  const navigate = useNavigate();
+
   const favFilter = () => {
     setFilterUser(!filterUser);
     setFilterCriteria("trending");
-    navigate("/");
   };
 
   return (
