@@ -224,7 +224,7 @@ const Wrapper = styled.div`
     height: 500px;
 
     .title {
-      font-size: 1rem;
+      font-size: 0.8rem;
       padding-bottom: 5px;
     }
 
