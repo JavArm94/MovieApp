@@ -75,6 +75,10 @@ const Wrapper = styled.div`
   @media screen and (max-width: 620px) {
     width: 480px;
   }
+
+  @media screen and (max-width: 510px) {
+    width: 80vw;
+  }
 `;
 
 export default UserProfile;

@@ -63,6 +63,12 @@ const Wrapper = styled.div`
     width: 480px;
     padding-bottom: 20px;
   }
+
+  @media screen and (max-width: 510px) {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+  }
 `;
 
 export default NavBar;

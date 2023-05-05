@@ -219,6 +219,25 @@ const Wrapper = styled.div`
       font-size: 1.4rem;
     }
   }
+
+  @media screen and (max-width: 510px) {
+    height: 500px;
+
+    .title {
+      font-size: 1rem;
+      padding-bottom: 5px;
+    }
+
+    .description {
+      font-size: 0.8rem;
+    }
+
+    .movie-page {
+      height: 50px;
+      width: 100px;
+      font-size: 1.2rem;
+    }
+  }
 `;
 
 export default FeatureCard;

@@ -202,6 +202,10 @@ const Wrapper = styled.div`
       padding: 4px;
     }
   }
+
+  @media screen and (max-width: 510px) {
+    width: 80vw;
+  }
 `;
 
 export default Filter;
