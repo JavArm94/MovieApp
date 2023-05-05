@@ -23,8 +23,8 @@ const MovieCard = ({
         backgroundImage: `url(${createBgImg(poster, poster_path)}) `,
       }}
     >
-      <Link to={`/${media_type_search}/${id}`} className="layer">
-        <div className="movie-info">
+      <Link to={`/${media_type_search}/${id}`}>
+        <div className="movie-info layer">
           <button className="score">
             {vote_average ? vote_average.toFixed(2) : 0.0}
           </button>
@@ -105,6 +105,43 @@ const Wrapper = styled.div`
     position: absolute;
     right: 10px;
     top: 65px;
+  }
+
+  @media screen and (max-width: 1050px) {
+    h1 {
+      font-size: 1.4rem;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    height: 400px;
+    h1 {
+      font-size: 1.6rem;
+    }
+    .movie-info p {
+      font-size: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 620px) {
+    height: 300px;
+    h1 {
+      font-size: 1.2rem;
+    }
+    .movie-info p {
+      font-size: 0.8rem;
+    }
+  }
+
+  @media screen and (max-width: 510px) {
+    height: 500px;
+    h1 {
+      font-size: 2rem;
+    }
+    .movie-info p {
+      font-size: 1.4rem;
+      font-weight: lighter;
+    }
   }
 `;
 

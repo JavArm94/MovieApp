@@ -70,12 +70,14 @@ const SingleRecordPage = () => {
           </p>
           <h3>Release date</h3>
           <p>{release_date ? release_date : first_air_date}</p>
+          <h2>More from director</h2>
         </section>
-        <section>
+        <section className="logo">
           <a href="https://www.themoviedb.org/" target="_blank">
             <img src={apiLogo} className="api-logo" />
           </a>
         </section>
+
         <section className="director-reco">
           <h2>More from director</h2>
           {single_record["directorRecords"].map((directorRecord) => {
@@ -132,7 +134,7 @@ const SingleRecordPage = () => {
         <h3>Release date</h3>
         <p>{release_date ? release_date : first_air_date}</p>
       </section>
-      <section>
+      <section className="logo">
         <a href="https://www.themoviedb.org/" target="_blank">
           <img src={apiLogo} className="api-logo" />
         </a>
@@ -172,6 +174,10 @@ const Wrapper = styled.div`
     grid-column-end: 3;
   }
 
+  .movie-details h2 {
+    display: none;
+  }
+
   .logo {
     grid-column-start: 3;
   }
@@ -203,6 +209,42 @@ const Wrapper = styled.div`
     background-repeat: no-repeat;
     border-radius: 20px;
     margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: 1300px) {
+    width: 1000px;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.9fr);
+    .logo {
+      display: none;
+    }
+    .movie-poster {
+      min-width: 100%;
+    }
+    .movie-details {
+      padding-left: 20px;
+    }
+  }
+
+  @media screen and (max-width: 1050px) {
+    width: 800px;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.9fr);
+    .movie-poster {
+      min-width: 100%;
+    }
+    .movie-details {
+      padding-left: 20px;
+    }
+    .movie-details h2 {
+      display: initial;
+      grid-column: 1/-1;
+    }
+    .director-reco h2 {
+      display: none;
+    }
+    .reco-poster {
+      height: 240px;
+      width: 180px;
+    }
   }
 `;
 

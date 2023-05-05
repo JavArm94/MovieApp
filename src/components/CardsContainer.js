@@ -62,6 +62,49 @@ const Wrapper = styled.div`
       display: none;
     }
   }
+  @media screen and (max-width: 1050px) {
+    width: 800px;
+    .card-container {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(
+          0,
+          1fr
+        );
+      grid-column-gap: 10px;
+      grid-row-gap: 10px;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 600px;
+
+    .card-container {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+    }
+  }
+
+  @media screen and (max-width: 620px) {
+    width: 480px;
+    .card-container {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+    }
+  }
+
+  @media screen and (max-width: 510px) {
+    width: 80vw;
+    .card-container {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+    }
+  }
 `;
 
 export default CardsContainer;
