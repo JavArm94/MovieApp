@@ -52,6 +52,7 @@ const Wrapper = styled.div`
     text-indent: 50px;
     color: #757575;
     width: 100%;
+    padding: 0;
   }
 
   input:focus {
@@ -67,8 +68,8 @@ const Wrapper = styled.div`
     font: inherit;
     cursor: pointer;
     outline: inherit;
-    left: -18px;
-    bottom: 24px;
+    left: -15px;
+    bottom: 23px;
   }
   .search-btn img {
     scale: 0.55;
@@ -89,8 +90,12 @@ const Wrapper = styled.div`
     height: auto;
     .search-btn {
       left: -16px;
-      bottom: -16px;
+      bottom: -15px;
     }
+  }
+
+  @media screen and (max-width: 620px) {
+    width: 480px;
   }
 `;
 

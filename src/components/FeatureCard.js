@@ -182,6 +182,43 @@ const Wrapper = styled.div`
       font-size: 1rem;
     }
   }
+
+  @media screen and (max-width: 800px) {
+    height: 800px;
+
+    .title {
+      font-size: 2rem;
+    }
+
+    .description {
+      font-size: 1.6rem;
+    }
+
+    .movie-page {
+      height: 80px;
+      width: 160px;
+      font-size: 1.6rem;
+    }
+  }
+
+  @media screen and (max-width: 620px) {
+    height: 600px;
+
+    .title {
+      font-size: 1.5rem;
+      padding-bottom: 10px;
+    }
+
+    .description {
+      font-size: 1rem;
+    }
+
+    .movie-page {
+      height: 60px;
+      width: 120px;
+      font-size: 1.4rem;
+    }
+  }
 `;
 
 export default FeatureCard;

@@ -33,7 +33,7 @@ const Pagination = () => {
 
 const Wrapper = styled.div`
   display: flex;
-  width: 1200px;
+  width: 200px;
   margin: auto;
   justify-content: center;
   padding: 20px 0px;

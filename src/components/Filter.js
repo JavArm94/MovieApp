@@ -132,10 +132,10 @@ const Filter = () => {
 };
 
 const Wrapper = styled.div`
+  display: flex;
   height: 48px;
   background-color: #141414;
   border-radius: 50px;
-  display: flex;
   justify-content: center;
   align-items: center;
   padding: 0px 8px;
@@ -181,7 +181,26 @@ const Wrapper = styled.div`
     margin-bottom: 20px;
   }
 
-  @media screen and (max-width: 1050px) {
+  @media screen and (max-width: 620px) {
+    display: flex;
+    width: 480px;
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 620px) {
+    width: 480px;
+    height: max-content;
+    background-color: none;
+    row-gap: 10px;
+    background-color: #000000;
+    margin: 0px;
+    span {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+    }
   }
 `;
 

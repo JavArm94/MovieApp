@@ -77,6 +77,18 @@ const Wrapper = styled.div`
     grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.5fr);
     width: 800px;
   }
+
+  @media screen and (max-width: 800px) {
+    grid-template-columns: minmax(0, 1.5fr);
+    width: 600px;
+    .container {
+      grid-template-columns: auto;
+    }
+  }
+
+  @media screen and (max-width: 620px) {
+    width: 480px;
+  }
 `;
 
 export default FeaturedContainer;

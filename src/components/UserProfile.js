@@ -71,6 +71,10 @@ const Wrapper = styled.div`
     grid-row-start: 2;
     grid-column-start: 2;
   }
+
+  @media screen and (max-width: 620px) {
+    width: 480px;
+  }
 `;
 
 export default UserProfile;
