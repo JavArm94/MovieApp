@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useReducer } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { poster_url as poster } from "../utils/constants";
 import { createBgImg } from "../utils/helpers";
@@ -51,10 +51,12 @@ const SingleRecordPage = () => {
           <h3>Cast</h3>
           <p>
             {single_record["cast"].map((person, i, row) => {
-              if (i + 1 === row.length) {
-                return person.name + ".";
-              } else {
-                return person.name + ", ";
+              if (i < 10) {
+                if (i + 1 === row.length || i === 9) {
+                  return person.name + ".";
+                } else {
+                  return person.name + ", ";
+                }
               }
             })}
           </p>
@@ -244,6 +246,70 @@ const Wrapper = styled.div`
     .reco-poster {
       height: 240px;
       width: 180px;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 600px;
+
+    .poster {
+      width: 100%;
+      height: 300px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 20px;
+      grid-column: 2/3;
+    }
+
+    .director-reco {
+      width: 100%;
+    }
+
+    .reco-poster {
+      height: 220px;
+      width: 120px;
+    }
+  }
+
+  @media screen and (max-width: 620px) {
+    display: flex;
+    flex-direction: column;
+    width: 480px;
+    .poster {
+      height: 500px;
+    }
+    h1 {
+      font-size: 1.2rem;
+    }
+    .movie-info p {
+      font-size: 0.8rem;
+    }
+
+    .movie-details {
+      padding: 0px;
+    }
+
+    .director-reco {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      row-gap: 20px;
+      column-gap: 20px;
+    }
+    .reco-poster {
+      margin: 0px;
+      width: 100%;
+      height: 280px;
+    }
+  }
+
+  @media screen and (max-width: 510px) {
+    width: 80vw;
+    h1 {
+      font-size: 2rem;
+    }
+    .movie-info p {
+      font-size: 1.4rem;
+      font-weight: lighter;
     }
   }
 `;
