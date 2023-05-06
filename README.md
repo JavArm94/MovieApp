@@ -1,6 +1,20 @@
+# MovieApp
+
+MovieApp is a web application developed in React and styled with styled-components. It allows you to explore the most popular and highest-rated movies and TV shows in The Movie Database (TMDb).
+
+With MovieApp, you can select your favorite movies and easily access them in the favorites section. You can also access individual pages for each movie or TV show, where you'll find detailed information about it and recommendations for other movies by the same director.
+
+In addition, you can use the search function to find specific movies and filter the results.
+
+The app features responsive design to adapt to any device and allows you to save your favorite movies for easy access anytime.
+
+All content in MovieApp is provided by TMDb's API, ensuring that you always have access to the most up-to-date information.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+To use the application in a local environment, you'll need an API key, which can be obtained [here](https://developer.themoviedb.org/docs).
 
 ## Available Scripts
 
