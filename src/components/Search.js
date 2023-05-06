@@ -1,15 +1,21 @@
-import React from "react";
 import styled from "styled-components";
 import searchIcon from "../assets/search.png";
 import { useFetchContext } from "../context/fetch_context";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Search = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const { fetchRecords, localUserFavRecords, filterUser, setPageIndex } =
     useFetchContext();
 
   const fetchRecordsPag = (input) => {
     setPageIndex(1);
     fetchRecords(input);
+
+    if (location.pathname !== "/") {
+      navigate("/");
+    }
   };
   return (
     <Wrapper>

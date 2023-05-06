@@ -3,21 +3,25 @@ import { useFetchContext } from "../context/fetch_context";
 import styled from "styled-components";
 
 const Pagination = () => {
-  const { pageIndex, setPageIndex, records_loading, records } =
+  const { pageIndex, setPageIndex, records_loading, records, lastPage } =
     useFetchContext();
   let nextPage = pageIndex + 1;
   let prevPage = pageIndex - 1;
   let pages = [prevPage, pageIndex, nextPage];
+  const setPageScroll = (page) => {
+    setPageIndex(page);
+    window.scroll(0, 0);
+  };
   if (!records_loading && records.length !== 0) {
     return (
       <Wrapper>
         <div className="pagination">
           {pages.map((page) => {
-            if (page > 0) {
+            if (page > 0 && page <= lastPage) {
               return (
                 <button
                   key={page}
-                  onClick={() => setPageIndex(page)}
+                  onClick={() => setPageScroll(page)}
                   className={pageIndex == page ? "primary" : "secondary"}
                 >
                   {page}

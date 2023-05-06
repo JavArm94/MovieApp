@@ -28,6 +28,7 @@ const initialState = {
   extra_info_loading: false,
   genres: [],
   genre_error: false,
+  lastPage: 0,
 };
 
 const FetchContext = React.createContext();
@@ -82,6 +83,7 @@ export const FetchProvider = ({ children }) => {
     try {
       const response = await axios.get(fetchUrl);
       const records = response.data;
+
       dispatch({ type: GET_RECORDS_SUCCESS, payload: records });
     } catch (error) {
       dispatch({ type: GET_RECORDS_ERROR });
@@ -110,21 +112,6 @@ export const FetchProvider = ({ children }) => {
 
     dispatch({ type: GET_FAVORITES, payload: records });
   };
-
-  /*
-  const fetchGenres = async () => {
-    try {
-      const response = await axios.get(
-        genres_fetch_url +
-          REACT_APP_MOVIEDB_API_KEY +
-          "&language=en-US"
-      );
-      const genres = response.data.genres;
-      dispatch({ type: GET_GENRES, payload: genres });
-    } catch (error) {
-      dispatch({ type: GET_GENRES_ERROR });
-    }
-  };*/
 
   const fetchSingleRecord = async (media_type, id) => {
     const fetchSingleRecordUrl = `${base_url_api}${media_type}/${id}?api_key=${process.env.REACT_APP_MOVIEDB_API_KEY}`;
