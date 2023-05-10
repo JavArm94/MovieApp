@@ -12,6 +12,8 @@ All content in MovieApp is provided by TMDb's API, ensuring that you always have
 
 [Online site](https://movie-app-som.vercel.app/)
 
+The website is based on [design by Lyashenkoart](https://dribbble.com/shots/19604823-International-ovie-iewing-Platform).
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
