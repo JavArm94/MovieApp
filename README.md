@@ -10,11 +10,13 @@ The app features responsive design to adapt to any device and allows you to save
 
 All content in MovieApp is provided by TMDb's API, ensuring that you always have access to the most up-to-date information.
 
+[Online site](https://movie-app-som.vercel.app/)
+
+The website is based on [design by Lyashenkoart](https://dribbble.com/shots/19604823-International-ovie-iewing-Platform).
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-To use the application in a local environment, you'll need an API key, which can be obtained [here](https://developer.themoviedb.org/docs).
 
 ## Available Scripts
 
@@ -27,6 +29,13 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+To use the application in a local environment, you'll need an API key, which can be obtained [here](https://developer.themoviedb.org/docs).
+After this, you need to create a .env file in the root directory of your project and add the following line followed by your API key:
+
+### `REACT_APP_API_KEY=your_api_key_here`
+
+Make sure to replace your_api_key_here with your actual TMDb API key.
 
 ### `npm test`
 
