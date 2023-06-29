@@ -7,7 +7,8 @@ import { Link } from "react-router-dom";
 import { useFetchContext } from "../context/fetch_context";
 
 const FeatureCard = ({
-  overview: description,
+  overview,
+  description,
   vote_average,
   poster_path,
   media_type,
@@ -17,10 +18,12 @@ const FeatureCard = ({
 }) => {
   const { filterMedia } = useFetchContext();
   const media_type_fav = media_type ? media_type : filterMedia; // featured fetch missing field media_type FIX
+  const featuredDescription = overview || description;
+
   const props = {
     id,
     title,
-    overview: description,
+    description: featuredDescription,
     vote_average,
     poster_path,
     name,
@@ -47,9 +50,9 @@ const FeatureCard = ({
             <h1>{record_name}</h1>
           </div>
           <div className="description">
-            {description && description.length > 100
-              ? description.slice(0, 150) + "..."
-              : description}
+            {featuredDescription && featuredDescription.length > 100
+              ? featuredDescription.slice(0, 150) + "..."
+              : featuredDescription}
           </div>
           <div className="more">
             <Link to={`/${media_type_fav}/${id}`}>

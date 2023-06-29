@@ -8,6 +8,7 @@ const FavButton = ({
   title,
   name,
   overview,
+  description,
   vote_average,
   poster_path,
   media_type,
@@ -24,8 +25,10 @@ const FavButton = ({
   };
 
   const [faved, setFaved] = useState(checkMovie(idMovie));
+
   const favMovie = (id) => {
     let userFavMovies = JSON.parse(localStorage.getItem("favMovies"));
+    let favDescription = overview || description;
     if (checkMovie(id)) {
       userFavMovies = userFavMovies.filter((movie) => movie.id !== id);
       localStorage.setItem("favMovies", JSON.stringify(userFavMovies));
@@ -37,7 +40,7 @@ const FavButton = ({
         media_type,
         title,
         name,
-        overview,
+        description: favDescription,
         vote_average,
         poster_path,
       });

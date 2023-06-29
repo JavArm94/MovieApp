@@ -4,35 +4,49 @@ import { poster_url as poster } from "../utils/constants";
 import { createBgImg } from "../utils/helpers";
 import { useFetchContext } from "../context/fetch_context";
 import { Link } from "react-router-dom";
+import FavButton from "./FavButton";
 
 const MovieCard = ({
   id,
   title,
   overview,
+  description,
+  favDescription,
   vote_average,
   poster_path,
   name,
   media_type,
 }) => {
   const { filterMedia } = useFetchContext();
-  let media_type_search = media_type ? media_type : filterMedia;
-  let description = overview || "";
+  const media_type_fav = media_type ? media_type : filterMedia;
+  const movDescription = overview || description || favDescription;
+  const props = {
+    id,
+    title,
+    vote_average,
+    poster_path,
+    name,
+    media_type: media_type_fav,
+    description: movDescription,
+  };
+
   return (
     <Wrapper
       style={{
         backgroundImage: `url(${createBgImg(poster, poster_path)}) `,
       }}
     >
-      <Link to={`/${media_type_search}/${id}`}>
+      <FavButton {...props}></FavButton>
+      <Link to={`/${media_type_fav}/${id}`}>
         <div className="movie-info layer">
           <button className="score">
             {vote_average ? vote_average.toFixed(2) : 0.0}
           </button>
           <h1> {title || name}</h1>
           <p>
-            {description && description.length > 100
-              ? description.slice(0, 100) + "..."
-              : description}
+            {movDescription && movDescription.length > 100
+              ? movDescription.slice(0, 100) + "..."
+              : movDescription}
           </p>
         </div>
       </Link>

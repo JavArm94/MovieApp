@@ -12,7 +12,6 @@ const FeaturedContainer = () => {
   } else if (records.length === 0) {
     return <div>No results found.</div>;
   }
-
   return (
     <Wrapper>
       <div className="container">

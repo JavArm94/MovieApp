@@ -1,12 +1,5 @@
 import "./App.css";
-import {
-  Search,
-  CardsContainer,
-  SingleRecordPage,
-  MovieCard,
-  Filter,
-  UserProfile,
-} from "./components";
+import { SingleRecordPage } from "./components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./containers/Navbar";
 import ContentContainer from "./containers/ContentContainer";

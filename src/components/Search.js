@@ -17,6 +17,7 @@ const Search = () => {
       navigate("/");
     }
   };
+
   return (
     <Wrapper>
       <button className="search-btn">
